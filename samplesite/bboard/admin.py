@@ -8,5 +8,10 @@ a = [
    Bb,
 ]
 
+class BbAdmin(admin.ModelAdmin):
+    list_display = ('title', 'content', 'price', 'published')
+    list_display_links = ('title', 'content')
+    search_fields = ('title', 'content')
+
 for line in a:
-    admin.site.register(line)
+    admin.site.register(line, BbAdmin)
